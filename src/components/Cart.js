@@ -2,6 +2,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../redux/actions';
+import '../components/Cart.scss'
 
 const Cart = () => {
   const dispatch = useDispatch();
