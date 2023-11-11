@@ -1,0 +1,28 @@
+// ProductList.scss
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .product {
+    border: 5px solid rgb(209, 234, 44);
+    padding: 20px;
+    text-align: center;
+  
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #aae46d;
+      
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      border: none;
+    }
+
+  
+  }
+  
