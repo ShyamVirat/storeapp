@@ -1,0 +1,20 @@
+
+h1{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    
+}
+.icons{
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+}
+
+
+.header {
+    position: sticky;
+    top: 0;
+    background-color: rgb(11, 61, 97); /* You can set the background color as per your design */
+    z-index: 100; /* Ensure the header is above other elements */
+  }

@@ -6,11 +6,19 @@
     h2 {
       margin-bottom: 20px;
     }
+
+    .emptyicon{
+      text-align: center;
+    }
+
+
   
     .cart-items {
-      display: flex;
+      display: grid;
+      // grid-template-columns: auto auto auto;
       flex-wrap: wrap;
       gap: 20px;
+
   
       .cart-item {
         border: 1px solid #ccc;
@@ -21,14 +29,23 @@
         p {
           margin: 0;
         }
+
+        .qtyinput{
+          bottom: 0px;
+          position: absolute;
+        }
+      .imagetitle{
+        padding-bottom: 50px;
+          }
   
         button {
-          background-color: #e74c3c;
-          color: white;
-          padding: 5px;
+          background-color: #ffffff;
+          color: rgb(5, 5, 5);
+          padding: 10px;
+          position:absolute;
           cursor: pointer;
           border: none;
-          position: absolute;
+
           top: 5px;
           right: 5px;
         }

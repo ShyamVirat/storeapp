@@ -24,7 +24,10 @@ const initialState = {
           return { ...state, cart: [...state.cart, { ...action.payload, quantity: 1 }] };
         }
       case 'REMOVE_FROM_CART':
-        return { ...state, cart: state.cart.filter(item => item.id !== action.payload) };
+
+        return { ...state, 
+          
+          cart: state.cart.filter(item => item.id !== action.payload) };
       case 'UPDATE_QUANTITY':
         return {
           ...state,
