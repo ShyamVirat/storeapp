@@ -8,6 +8,12 @@ body {
 
 }
 
+.container {
+  max-width: auto; /* Adjust this value based on your design */
+  margin: 0 auto;   /* Center the container horizontally */
+  padding: 20px;    /* Add padding for a cleaner look */
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
