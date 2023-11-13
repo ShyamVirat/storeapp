@@ -56,12 +56,12 @@ const Cart = () => {
                     type="number"
                     value={item.quantity}
                     step="any"
-                    min="1"
-                    max="10"
+                    autoFocus={false} 
+                
                     //value should not be less than Zero
                     onChange={(e) => {
                       const newQuantity = parseInt(e.target.value, 10);
-                      if (!isNaN(newQuantity) && newQuantity >= 1 && newQuantity <= 10) {
+                      if (!isNaN(newQuantity) && newQuantity >= 0 && newQuantity <= 10) {
                         dispatch(updateQuantity(item.id, newQuantity));
                       }
                       else {
@@ -70,7 +70,7 @@ const Cart = () => {
                     }
                     }
                   />
-                    <p>Total: ${item.quantity * item.price}</p>
+                    <p>Total: ${item.quantity * item.price.toFixed(2)}</p>
                   </p>
                 </div>
                 <button onClick={() => handleRemoveFromCart(item.id)}>
@@ -81,6 +81,7 @@ const Cart = () => {
           </div><div className="cart-summary">
               <h3>Total Amount: ${cart.reduce((total, item) => total + item.quantity * item.price, 0).toFixed(2)}</h3>
             </div></>
+
         )}
     </div>
   );
