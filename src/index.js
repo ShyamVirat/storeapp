@@ -13,6 +13,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import {store,persistor} from './redux/store';
 import App from './App';
 import ScrollToTopButton from './components/topScroll';
+import Taskbar from './components/taskbar';
 
 const rootElement = document.getElementById('root');
 ReactDOM.createRoot((rootElement)).render(
@@ -21,6 +22,7 @@ ReactDOM.createRoot((rootElement)).render(
       <Router>
       <PersistGate loading={null} persistor={persistor}>
         <Header />
+        <Taskbar/>
         <ScrollToTopButton />
         <App />
         <ToastContainer />

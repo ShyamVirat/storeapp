@@ -1,3 +1,5 @@
+
+
 // Cart.js
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -55,20 +57,27 @@ const Cart = () => {
                   <p>Qty:<input
                     type="number"
                     value={item.quantity}
+                    inputMode="numeric"
                     step="any"
                     autoFocus={false} 
-                
+                    min="1"
+                    max="10"
                     //value should not be less than Zero
                     onChange={(e) => {
                       const newQuantity = parseInt(e.target.value, 10);
-                      if (!isNaN(newQuantity) && newQuantity >= 1 && newQuantity <= 10) {
-                        dispatch(updateQuantity(item.id, newQuantity));
+                      if (e.target.value === '' ||  (!isNaN(newQuantity) && newQuantity >= 1 && newQuantity <= 10)) {
+                        dispatch(updateQuantity(item.id, e.target.value === '' ?  '' : newQuantity));
                       }
-                      else {
+                      else{
+
                         alert('Quantity must be between 1 and 10.');
-                      }
-                    }
-                    }
+                        
+                        }
+                        if ((e.target.value === '')){
+                          handleRemoveFromCart(item.id)
+                         } 
+
+                      }}
                   />
                     <p>Total: ${(item.quantity * item.price).toFixed(2)}</p>
                   </p>

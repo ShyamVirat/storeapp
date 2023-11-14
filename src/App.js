@@ -4,6 +4,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
+
 import './App.scss';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Routes>
       <Route path="/" element={<ProductList />} />
       <Route path="/Cart" element={<Cart />} />
+      {/* <Route path="/category/:category" component={Category} /> */}
     </Routes>
 
   );
