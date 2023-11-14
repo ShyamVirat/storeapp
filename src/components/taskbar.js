@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { updateProducts } from '../redux/actions';
 import axios from 'axios'; // Import axios for making API requests
 import './taskbar.scss'
-import { useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Taskbar = () => {
     const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const Taskbar = () => {
         try {
             let response;
             if (category.toLowerCase() === 'home') {
-                response = await axios.get(`https://fakestoreapi.com/products`)
+                response = await axios.get(`https://fakestoreapi.com/products`) 
             } else {
                 response = await axios.get(
                     `https://fakestoreapi.com/products/category/${category}`
@@ -38,7 +38,7 @@ const Taskbar = () => {
 
     if (location.pathname === '/cart') {
         return null;
-      }
+    }
 
     return (
         <div className="taskbar">

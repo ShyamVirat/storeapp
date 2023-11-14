@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../redux/actions';
 import axios from 'axios'; // Import axios for making API requests
 import { toast } from 'react-toastify';
-import {updateProducts} from '../redux/actions';
+import { updateProducts } from '../redux/actions';
 import '../components/ProductList.scss';
 
 const ProductList = () => {
@@ -15,7 +15,7 @@ const ProductList = () => {
     const fetchProducts = async () => {
       try {
         const response = await axios.get('https://fakestoreapi.com/products');
-   
+
         const fetchedProducts = response.data;
         console.log(response.data);
         dispatch(updateProducts(fetchedProducts));
@@ -39,73 +39,8 @@ const ProductList = () => {
     });
   };
 
-// const ProductList = () => {
-//   const dispatch = useDispatch();
-//   const products = useSelector((state) => state.products);
-
-//   useEffect(() => {
-
-//     const fetchProducts = async () => {
-//       try {
-//         const [productsResponse, categoriesResponse] = await Promise.all([
-//           axios.get('https://fakestoreapi.com/products'),
-//           axios.get('https://fakestoreapi.com/products/categories'),
-//         ]);
-    
-//         const fetchedProducts = productsResponse.data;
-//         const fetchedCategories = categoriesResponse.data;
-    
-//         dispatch(updateProducts(fetchedProducts, fetchedCategories));
-//       } catch (error) {
-//         console.error('Error fetching products:', error);
-//       }
-//     };
-    
-
-//     const handleCategoryClick = (category) => {
-//       // Filter products based on the selected category
-//       const filteredProducts = products.filter((product) =>
-//         product.category === category
-//       );
-  
-//       // Use the filtered products as needed
-//       console.log('Filtered Products:', filteredProducts);
-//     };
-
-//     // const fetchProducts = async () => {
-//     //   try {
-//     //     // Fetch products from the FakeStoreAPI
-//     //     const response = await axios.get('https://fakestoreapi.com/products');
-//     //     const fetchedProducts = response.data;
-//     //     console.log(response.data);
-//     //     // Dispatch action to update Redux store with fetched products
-//     //     dispatch({ type: 'UPDATE_PRODUCTS', payload: fetchedProducts });
-//     //   } catch (error) {
-//     //     console.error('Error fetching products:', error);
-//     //   }
-//     // };
-
-//     // Call the fetchProducts function
-//     fetchProducts();
-//   }, [dispatch]);
-
-//   const handleAddToCart = (product) => {
-//     dispatch(addToCart(product));
-//     toast.success(`${product.title} added to cart successfully!`, {
-//       position: 'top-right',
-//       autoClose: 2000, // Close the toast after 2 seconds
-//       hideProgressBar: false,
-//       closeOnClick: true,
-//       pauseOnHover: true,
-//       draggable: true,
-//       progress: undefined,
-//     });
-//   };
 
   return (
-
-    
-
     <div className="product-list">
       {products.map((product) => (
         <div key={product.id} className="product">
@@ -128,7 +63,6 @@ const ProductList = () => {
           <div class="hide">Add to cart</div>
         </div>
       ))}
-    
     </div>
 
   );
